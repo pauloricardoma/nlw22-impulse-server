@@ -6,7 +6,12 @@ import { routes } from './routes';
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'exp://192.168.0.130:19000', 'http://localhost:19002']
+  origin: [
+    'http://localhost:3000', 
+    'exp://192.168.0.130:19000', 
+    'http://localhost:19002', 
+    'https://nlw22-impulse-web.vercel.app/',
+  ]
 }));
 app.use(express.json());
 app.use(routes);
