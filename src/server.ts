@@ -5,7 +5,12 @@ import { routes } from './routes';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://nlw22-impulse-web.vercel.app/', 
+    'https://nlw22-impulse-lxv6frf3v-pauloricardoma.vercel.app',
+  ]
+}));
 app.use(express.json());
 app.use(routes);
 
