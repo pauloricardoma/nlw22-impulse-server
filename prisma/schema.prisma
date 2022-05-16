@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Feedback {
+  id String @id @default(uuid())
+
+  type       String
+  comment    String
+  screenshot String?
+
+  @@map("feedbacks")
+}
+
+// Tabelas, colunas,
+// PARA CRIAR A TABELA NO BD
+// terminal command: npx prisma migrate dev
+// terminal command: npx prisma migrate deploy -> para produção
+// PARA VER AS TABELAS
+// terminal command: npx prisma studio
